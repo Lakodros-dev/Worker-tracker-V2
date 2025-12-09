@@ -12,8 +12,8 @@ import {
     mockOfficeSettings
 } from './mockData';
 
-// Production: same domain, Dev: proxy
-const API_URL = '/api';
+// Production: use env variable, Dev: proxy
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const client = axios.create({
     baseURL: API_URL,
